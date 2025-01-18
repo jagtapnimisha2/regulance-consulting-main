@@ -1,0 +1,96 @@
+/* ------------less buttons ------------- */
+
+.short-content {
+    display: none;
+  }
+  
+  .full-content {
+    display: block;
+  }
+  
+  button {
+    display: none;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Show the button and short content only on screens smaller than 768px */
+  @media screen and (max-width: 768px) {
+    .short-content {
+        display: block;
+    }
+  
+    .full-content {
+        display: none;
+    }
+  
+    button {
+        display: block;
+    }
+  }
+  
+  /* 2mds  */
+  .short-contentt, .full-contentt {
+    display: none;
+  }
+  
+  .short-contentt {
+    display: block;
+  }
+  
+  .toggle-buttonn {
+    display: none;
+  }
+  
+  /* Show button and short content only on small screens */
+  @media screen and (max-width: 768px) {
+    .short-contentt {
+        display: block;
+    }
+  
+    .full-contentt {
+        display: none;
+    }
+  
+    .toggle-buttonn {
+        display: block;
+    }
+  }
+  /*  3rd */
+  
+          /* Custom styles to manage content visibility */
+          .short-content3, .full-content3 {
+            display: none;
+        }
+  
+        .short-content3 {
+            display: block;
+        }
+  
+        .toggle-button3 {
+            display: none;
+        }
+  
+        /* Show button and short content only on small screens */
+        @media screen and (max-width: 768px) {
+            .short-content3 {
+                display: block;
+            }
+  
+            .full-content3 {
+                display: none;
+            }
+  
+            .toggle-button3 {
+                display: block;
+            }
+        }

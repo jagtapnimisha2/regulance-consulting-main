@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu with Hover Effects</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #333;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+}
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  display: none;
+}
+
+.dropdown-item a {
+  padding: 10px 20px;
+}
+
+.dropdown-item a:hover {
+  background-color: #555;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li class="menu-item"><a href="#">Home</a></li>
+      <li class="menu-item"><a href="#">Services</a>
+        <ul class="dropdown">
+          <li class="dropdown-item"><a href="#">Web Design</a></li>
+          <li class="dropdown-item"><a href="#">App Development</a></li>
+          <li class="dropdown-item"><a href="#">SEO</a></li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="#">About</a></li>
+      <li class="menu-item"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

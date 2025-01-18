@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Content with Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Custom styles to manage content visibility */
+        .short-content3, .full-content3 {
+            display: none;
+        }
+
+        .short-content3 {
+            display: block;
+        }
+
+        .toggle-button3 {
+            display: none;
+        }
+
+        /* Show button and short content only on small screens */
+        @media screen and (max-width: 768px) {
+            .short-content3 {
+                display: block;
+            }
+
+            .full-content3 {
+                display: none;
+            }
+
+            .toggle-button3 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="content">
+            <p class="short-content3">
+                This is the short version of the content...
+            </p>
+            <p class="full-content3">
+                This is the full version of the content. It includes all the details that are hidden in the short version.
+            </p>
+            <button id="toggleButton3" class="btn btn-success toggle-button3">Read more</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const shortContent = document.querySelector('.short-content3');
+            const fullContent = document.querySelector('.full-content3');
+            const toggleButton3 = document.getElementById('toggleButton3');
+
+            function updateContentVisibility() {
+                if (window.innerWidth <= 768) {
+                    if (fullContent.style.display === 'block') {
+                        shortContent.style.display = 'none';
+                    } else {
+                        shortContent.style.display = 'block';
+                    }
+                    toggleButton3.style.display = 'block';
+                } else {
+                    fullContent.style.display = 'block';
+                    shortContent.style.display = 'none';
+                    toggleButton3.style.display = 'none';
+                }
+            }
+
+            toggleButton3.addEventListener('click', function () {
+                if (fullContent.style.display === 'none' || fullContent.style.display === '') {
+                    fullContent.style.display = 'block';
+                    shortContent.style.display = 'none';
+                    toggleButton3.textContent = 'Read less';
+                } else {
+                    fullContent.style.display = 'none';
+                    shortContent.style.display = 'block';
+                    toggleButton3.textContent = 'Read more';
+                }
+            });
+
+            window.addEventListener('resize', updateContentVisibility);
+            updateContentVisibility();
+        });
+    </script>
+</body>
+</html>
